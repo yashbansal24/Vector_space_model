@@ -1,0 +1,81 @@
+﻿Help on module indexer:
+
+NAME
+    indexer - This project has been created by:
+
+DESCRIPTION
+                                                    ###############################################
+                                                    ###   VAIBHAV AGRAWAL 2014B3A7PS0501H       ###
+                                                    ###   YASH BANSAL  2014A7PS0119H    	###
+                                                    ###   SHIVAM AGRAWAL 2014B3A7PS0940H    	###
+                                                    ###   AMAN GUPTA     2014A7PS0201H          ###
+                                                    ###############################################
+    
+    
+    The proposed query search engine has been employed using "Vector Space model".
+    
+    Version of python used = python 3.5.2
+    
+    The major data structures used in the project are:
+    
+    •       Dictionaries / HashMaps
+    •       List
+    •       String
+    
+    The code consists of two files namely porter.py and indexer.py.
+
+FUNCTIONS
+    auto_correct(s)
+        auto_correct(s) takes an input list of string s
+        This functions returns -1 if the query list is too difficult to tolerate or crosses the threshold.
+        It returns the resultant correct list of strings which would be processed by query engine.
+    
+    build_heap()
+        build_heap()
+        This function sorts the obtained results from the tf-idf algorithm using the well
+        known "HEAP SORT" algorithm. This can be further used to print only some of most relevant documents.
+        For eg. - We can show 10 results per page.
+    
+    computeTF_IDF(N)
+        computeTF_IDF(N)
+        It has N as a parameter. This N is the number of documents available in corpus.
+        This function helps calculating the tf-idf values of all the words in our index. This would help us later
+        to figure out the most relevant documents in the corpus.
+        Math library has been used to implemnt the logarithmic functions.
+    
+    fileread()
+        fileread() function read all the files in the corpus and index them into the dictionary.
+        This function uses the porter algorithm and is generating a list of tokens for each document using the nltk.word_tokenize() function in the "punkt" library.
+    
+    getQueryTF_IDF()
+        getQueryTF_IDF()
+        This function also calculates the tf-idf value, but for the query string only.
+        Math library has been used to implemnt the logarithmic functions.
+    
+    get_query()
+        get_query()
+        This is a helper function to input the requested query.
+    
+    index(l)
+        index(l) accepts a parameter l which is of type list.
+        It would help to put the new words in the dictionary and increase the frequency of the previously occured words in the dictionary.
+        The time complexity of this function depends on the dictionary data structure.
+        Average case - O(1)/insertion
+        Worst case - O(length of list)/insertion
+    
+    levenshtein(s1, s2)
+        levenshtein(s1, s2) computes the edit distance between two strings
+        The following algorithm is a derived version of Algorithms Wiki
+        for further reference go to - https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Levenshtein_distance#Python
+    
+    outputFirst_K_results(K)
+        outputFirst_K_results(K)
+        This funtion outputs the results obtained from the search engine.
+    
+    test1()
+        test1() is a helper function which computes the tf-idf values of the resulting index
+
+
+FILE
+    indexer.py
+
